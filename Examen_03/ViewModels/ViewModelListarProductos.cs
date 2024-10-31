@@ -52,17 +52,18 @@ namespace Examen_03.ViewModels
         public ObservableCollection<ProductoModel> Productos { get; }
 
         #region Comando
-            public ICommand GuardarCommand { get; }
+            public ICommand AgregarProductoCommand { get; }
         #endregion
 
        
         public ViewModelListarProductos()
         {
-            GuardarCommand = new RelayCommand(Guardar);
+            AgregarProductoCommand = new RelayCommand(Guardar);
             Productos = new ObservableCollection<ProductoModel>();
         }
         private void Guardar()
         {
+
             Productos.Add(new ProductoModel
             {
                 Nombre = this.Nombre,
